@@ -1,7 +1,7 @@
 
 import pandas as pd
 from sodapy import Socrata
-from ___ui import nombre_departamento, limite_registros
+from ui import nombre_departamento, limite_registros 
 from tabulate import tabulate
 
 client = Socrata ("www.datos.gov.co", None)
@@ -17,4 +17,7 @@ results_df = results_df[columnas_deseadas.keys()].rename(columns=columnas_desead
 results_df = results_df.sort_values(by=['CIUDAD'])
 
 print(tabulate(results_df, headers='keys', tablefmt='outline'))
+
+
+
 
